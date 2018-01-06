@@ -42,10 +42,10 @@ This will generate single file dependencies.json, containing dependency structur
 ```
 {
   "first":{
-    "dependency1:{}
+    "dependency1":{}
    },
    "second:{
-    "dependency2:{}
+    "dependency2":{}
    }
 }
 ```
