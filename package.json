@@ -1,0 +1,45 @@
+{
+  "name": "gulp-less-tree",
+  "version": "0.0.1",
+  "description": "Gulp adapter for generating less dependency tree json.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaskulhanek/gulp-less-tree.git"
+  },
+  "keywords": [
+    "less",
+    "tree",
+    "dependency"
+  ],
+  "author": "Jonas Kulhanek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonaskulhanek/gulp-less-tree/issues"
+  },
+  "homepage": "https://github.com/jonaskulhanek/gulp-less-tree#readme",
+  "dependencies": {
+    "file-name": "^0.1.0",
+    "less-tree": "0.0.2",
+    "path": "^0.12.7",
+    "plugin-error": "^0.1.2",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "mocha": "^4.1.0",
+    "path": "^0.12.7",
+    "should": "^13.2.0",
+    "stream-array": "^1.1.2",
+    "stream-assert": "^2.0.3",
+    "vinyl": "^2.1.0"
+  }
+}
