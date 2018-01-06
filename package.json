@@ -1,6 +1,6 @@
 {
   "name": "gulp-less-tree",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gulp adapter for generating less dependency tree json.",
   "main": "index.js",
   "directories": {
