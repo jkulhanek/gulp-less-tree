@@ -5,7 +5,7 @@ let through = require('through2');
 let PluginError = require('plugin-error');
 let path = require('path');
 let File = require('vinyl');
-let lessTree = require('less-tree');
+const createFileTree = require('./lib/createFileTree');
 
 function filename(fp) {
     return path.basename(fp, path.extname(fp));
@@ -71,7 +71,7 @@ function gulpLessTree(file, opt){
         }
 
         // create less vinyl file tree 
-        let root = lessTree(path.join(file.base, file.relative));
+        let root = createFileTree(path.join(file.base, file.relative));
         tree[fileKey] = root.toTreeObject();
         cb();
       }
