@@ -1,18 +1,24 @@
 language: node_js
 node_js:
-  - "7"
-  - "6"
-  - "5"
-  - "4"
-
+- '7'
+- '6'
+- '5'
+- '4'
 script: echo "Running tests against $(node -v) ..."
-
 jobs:
   include:
-    - stage: npm release
-      node_js: "7"
-      script: echo "Deploying to npm ..."
-      deploy:
-        provider: npm
-        api_key: $NPM_API_KEY
-        on: deploy-npm-release
+  - stage: npm release
+    node_js: '7'
+    script: echo "Deploying to npm ..."
+    deploy:
+      provider: npm
+      api_key: "$NPM_API_KEY"
+      on: deploy-npm-release
+deploy:
+  provider: npm
+  email: jonas.kulhanek@live.com
+  api_key:
+    secure: MJA81K2uMLD49OXjckajpWgzSr2/J72S0G545zkRORXhF9mmKEw+386EwPZZtT2cdNe4gfRqd0OQlsQAVFl+aGIQsE344COAf8J5JKQHfmNg1kYFwLm7HjutjFD5+yYPKjM6zN3hgeBybhM52SV+nmyXJHXrfthDDJgo84ekGiAPqKAPzRFA1MH/jR9WJ4XAnx+IAVwmJ3K6FkoyTGdsEejq1OK4zxW7175cgyC9G/jBvNVLosU8QIV3f/TKWVqW+eBDfYBGH9/iXVf+SA9TnZHBnxtYLVnIHc/GEFemZTj4z3b8ICtBwugBe6ERe126fxnowQVVx88NKKxQS71tBUi7S60mIaOdZ2CdgHF4jdOCDh92T+2plTs0UzYpPTwQ9+rXqmv9EOZDdZgvWTFXCAGXNcqxtfvL9HzCdA4x0QbFOGkRbShbWAWLY9IOmrWjl36ysGDeHmzdqYdjxFTl56O1uS+GwuJ+jBhwpITIQbQsg0Jm+SdKzlcWbFM7UF/F3Kz8aj1j7UlvFHE2PYTSGQUU56g3Gkjp0vayA7kqDlEx6p88EINBQ/qF41RBxbTp/FIU07WuKVLKs56l5UhsDqehrU6FHY9aZU+6RAUrlOwRB97F9nI1ygDdhxxSMQC43zF28HLibMubca0dGWBbKxiKJXiW0NPfF8tJWMuinoI=
+  on:
+    tags: true
+    repo: jonaskulhanek/gulp-less-tree
