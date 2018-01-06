@@ -4,9 +4,12 @@
 let through = require('through2');
 let PluginError = require('plugin-error');
 let path = require('path');
-var File = require('vinyl');
-let filename = require('file-name');
+let File = require('vinyl');
 let lessTree = require('less-tree');
+
+function filename(fp) {
+    return path.basename(fp, path.extname(fp));
+  }
 
 // Consts
 const PLUGIN_NAME = 'gulp-less-tree';

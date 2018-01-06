@@ -26,20 +26,18 @@
   },
   "homepage": "https://github.com/jonaskulhanek/gulp-less-tree#readme",
   "dependencies": {
-    "file-name": "^0.1.0",
     "less-tree": "0.0.2",
     "path": "^0.12.7",
     "plugin-error": "^0.1.2",
-    "through2": "^2.0.3"
+    "through2": "^2.0.3",
+    "vinyl": "^2.1.0"
   },
   "devDependencies": {
-    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "mocha": "^4.1.0",
     "path": "^0.12.7",
     "should": "^13.2.0",
     "stream-array": "^1.1.2",
-    "stream-assert": "^2.0.3",
-    "vinyl": "^2.1.0"
+    "stream-assert": "^2.0.3"
   }
 }
