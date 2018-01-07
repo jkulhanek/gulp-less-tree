@@ -56,7 +56,7 @@ describe('gulp-less-tree', function() {
         gulp.src(fixtures('first.less'), { buffer: true })
         .pipe(gulpLessTree('test.json'))
         .pipe(assert.length(1))
-        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first":{"resource1.less":{}}}'); }))
+        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first.less":{"resource1.less":{}}}'); }))
         .pipe(assert.end(done));
     });
 
@@ -64,7 +64,7 @@ describe('gulp-less-tree', function() {
         gulp.src(fixtures('*'), { buffer: true })
         .pipe(gulpLessTree('test.json'))
         .pipe(assert.length(1))
-        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first":{"resource1.less":{}},"resource1":{},"resource2":{},"second":{"resource2.less":{}}}'); }))
+        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first.less":{"resource1.less":{}},"resource1.less":{},"resource2.less":{},"second.less":{"resource2.less":{}}}'); }))
         .pipe(assert.end(done));
     });
 
