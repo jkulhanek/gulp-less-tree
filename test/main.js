@@ -8,7 +8,12 @@ var File = require('vinyl');
 var gulp = require('gulp');
 require('mocha');
 
-var fixtures = function (glob) { return path.join(__dirname, 'fixtures', glob); }
+var fixtures = function (glob) {
+    if(typeof glob ==='string')
+        return path.join(__dirname, 'fixtures', glob);
+    else
+        return glob.map(fixtures);
+}
 
 var thirdBase = __dirname,
     thirdFile = 'third.less',
@@ -61,10 +66,18 @@ describe('gulp-less-tree', function() {
     });
 
     it('should concat dependencies of multiple files', function (done) {
-        gulp.src(fixtures('*'), { buffer: true })
+        gulp.src(fixtures(['first.less', 'second.less']), { buffer: true })
         .pipe(gulpLessTree('test.json'))
         .pipe(assert.length(1))
-        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first.less":{"resource1.less":{}},"resource1.less":{},"resource2.less":{},"second.less":{"resource2.less":{}}}'); }))
+        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"first.less":{"resource1.less":{}},"second.less":{"resource2.less":{}}}'); }))
+        .pipe(assert.end(done));
+    });
+
+    it('should add specific reference type', function (done) {
+        gulp.src(fixtures(['fourth.less']), { buffer: true })
+        .pipe(gulpLessTree('test.json'))
+        .pipe(assert.length(1))
+        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"fourth.less":{"first.less":{"_attributes":["reference"],"resource1.less":{}}}}'); }))
         .pipe(assert.end(done));
     });
 
