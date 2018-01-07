@@ -41,11 +41,11 @@ This will generate single file dependencies.json, containing dependency structur
 
 ```
 {
-  "first":{
-    "dependency1":{}
+  "first.less":{
+    "dependency1.less":{}
    },
-   "second:{
-    "dependency2":{}
+   "second.less":{
+    "dependency2.less":{}
    }
 }
 ```
