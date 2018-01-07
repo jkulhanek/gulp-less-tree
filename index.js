@@ -63,7 +63,7 @@ function gulpLessTree(file, opt){
         }
     
         // add file to tree instance
-        var fileKey = filename(file.relative);
+        var fileKey = file.relative;
         if(tree.hasOwnProperty(fileKey)){
             this.emit('error', new Error('gulp-less-tree: There is a duplicity in file names - "'+ fileKey+'"'));
             cb();
