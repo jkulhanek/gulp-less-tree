@@ -1,7 +1,7 @@
 # gulp-less-tree
 Gulp adapter for less-tree module. Generates less-tree json file.
 
-![status](https://secure.travis-ci.org//jonaskulhanek/gulp-less-tree.svg?branch=master)
+![status](https://secure.travis-ci.org//jkulhanek/gulp-less-tree.svg?branch=master)
 
 ## Installation
 
