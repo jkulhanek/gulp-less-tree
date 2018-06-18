@@ -18,4 +18,4 @@ jobs:
       on:
         tags: true
         all_branches: true
-        repo: jonaskulhanek/gulp-less-tree
+        repo: jkulhanek/gulp-less-tree
